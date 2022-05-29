@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { NavigationService } from '../navigation.service';
 
 @Component({
   selector: 'app-sub',
@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sub.component.scss'],
 })
 export class SubComponent {
-  constructor(private readonly location: Location) {}
+  constructor(private readonly navigationService: NavigationService) {}
 
   public onBack(): void {
-    this.location.back();
+    this.navigationService.back();
   }
 }
